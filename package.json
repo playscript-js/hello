@@ -1,0 +1,26 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "helloworld",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/playscript-js/hello.git"
+  },
+  "keywords": [
+    "hello"
+  ],
+  "author": "ivy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/playscript-js/hello/issues"
+  },
+  "homepage": "https://github.com/playscript-js/hello#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
