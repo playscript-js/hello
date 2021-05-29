@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="play.js">
+      app=new setup({type:"matte",hue:"#262626"})
+      function start(e){
+        intro=new layout("column","100%",window.innerHeight+"px").css({"color":"white","background-image":"url(cover.gif)","background-repeat":"no-repeat","background-size":"contain","background-position":"center","background-color":"#262626"})
+        .align("center").justify("center").html("welcome to PlayScript")
+        b=new bar("Playscript","solid-slit","options")
+        body.add(intro,b,new text("INTRODUCTION").css({margin:"80px auto",fontSize:"34px"}))
+        
+      }
+    </script>
+</html>

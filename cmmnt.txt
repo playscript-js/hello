@@ -1,0 +1,8 @@
+1.core dependencies
+2.app type system
+3.root finder
+4.combine module and import then launch on ready event
+5.core functions
+6.set title
+
+100.if avail, run external/inline script
