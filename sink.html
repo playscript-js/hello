@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="play.js">
+      app=new setup({type:"matte",import:"toggle,modernlist"})
+      function start(e){
+        b=new bar("PS-Kitchen sink","solid","options,drawer").list("example 1,example 2,example 3",function(e){app.alert(e)}).menu("item 1,item 2,item 3",function(e){app.alert(e)});body.add(b,new button("button"),new toggle("switch"),new stringlist("stringlist 1,stringlist 2,stringlist 3"),modernlist([{title:"item 1",body:"modernlist",src:"cover.gif"},{title:"item 2",body:"modernlist",src:"cover.gif"},{title:"item 3",body:"modernlist",src:"cover.gif"}]))
+      }
+    </script>
+
+</html>

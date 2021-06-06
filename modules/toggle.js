@@ -1,0 +1,4 @@
+function toggle(t,w,h,opt){
+ var knob,bar,val; var obj=new layout("row",w,h).add(bar=new layout("row","50px",null,"shadow").css({borderRadius:"100px",background:"var(--back)"}).add(knob=new layout("row","20px","20px").css({margin:"2px 3px",border:"2px solid rgba(150,150,150,.2)",borderRadius:"100px"})),t?new text(t):"").scroll("visible").css({margin:"10px"}).align("center").on("click",function(e){obj.switch("toggle")});val=false;obj.switch=function(a){if(a&&typeof a=="string"){if(a=="on")val=true;else if(a=="false")val==false;else val=val?false:true;knob.animate({marginLeft:val?"auto":"3px",marginRight:val?"3px":"auto",background:val?"var(--hue)":"var(--back)"})}else return val;return obj}
+    return obj
+}

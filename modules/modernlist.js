@@ -1,0 +1,2 @@
+function modernlist(ls,w,h,opt){
+ var obj=new list(new layout("row","100%").align("center").add(new tag("img","50px","50px").css({borderRadius:"12px",margin:"10px","object-fit":"cover"}).bind({"src":"src"}),new layout("column").add(new text("").bind({text:"title"}).css({padding:"3px 10px",fontSize:"20px"}),new text("").bind({text:"body"}).css({padding:"3px 10px"}))));obj.push=obj.pushItem;obj.pop=obj.popItem;obj.select=obj.selectItem;obj.list=obj.listItem;obj.list(ls||[]);return obj;}

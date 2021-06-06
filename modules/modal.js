@@ -4,6 +4,7 @@ function modal(child="",opt=""){
   obj.open=function(a){body.css({"overflow":"hidden"});history.pushState(null,null,null);html.add(obj);return obj}
   obj.fixed=function(a){if(a)obj.attr("fixed","true");else obj.attr("fixed","false");return obj}
   obj.close=function(a){history.back()}
+  if(opt.includes("fadein"))obj.child(0).css("opacity",0).animate({opacity:1})
   return obj
 }
 
