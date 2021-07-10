@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="play.js">
+      app=new setup({theme:"oled",import:"page,bar,code"})
+      start=function(e){
+        b=new bar("PS Playgound","none","options").menu("Export,Undo,Redo,Reset")
+        c=new code(`app = new setup({ready:start});\n\nfunction start(e){\napp.alert("hello world");\n}`,"100%","100%","line")
+        r=new button("run","90px",null,"silent,pill,corner").on("click",function(){alert(c.text());app.page(`<html><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="http://localhost:7700/play.js">`+c.text()+`<\/script><\/html>`,"html")})
+        body.add(b,c,r)
+      }
+    </script>
+
+</html>

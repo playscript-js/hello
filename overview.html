@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<html><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script src="play.js">app=new setup({title:"Applette dev",import:"bar,unilist,fab"});o=app.json(app.disk.all)||[];c=Number(app.disk.current||0);cp=0;
+      function start(e){body.add(b=new bar(o[c].title+" - index","slit","options").menu("New page,Remove page,Undo,Redo,Pallette,Assets",function(x){if(x=="New page")np(prompt("Add page name"))}),new layout("row","100%","100%").add(new unilist(o[c].page,"30%"),new edit(o[c].page[0].data,"68%","calc( 100% - 100px )","slate").css("background","blue")),new fab("plus").on("click",function(){}))}
+      function np(i){if(i){o[c].page.push({title:i,data:"var app = new setup({});\n\nfunction start(e){\nvar t = new text( \"jello wereld\" );\nbody.add( t );\n}"});app.disk.all=app.json(o);}}</script></html>

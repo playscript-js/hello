@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="play.js">
+      app=new setup({title:"Applette dev",theme:"light",import:"modernlist,bar,fab,snack,menu"})
+      const o=app.json(app.disk.all)||[]
+      function start(e){
+        m=new modernlist(o).select(function(e,h,d){app.menu("Open,Edit,Export,Delete","center",function(x){app.disk.current=e;if(x=="Open")app.page("overview.html?pos"+e);if(x=="Delete")dp(e)})});body.add(new bar("Applette dev","slit","drawer,options").list("Documentation,Modules,Examples,More").menu("Theme,Account,Terms,About",function(x){if(x=="Theme")app.theme("toggle")}),m,new fab("plus","35px").on("click",function(e){var e1,e2,e3=null;new modal(new layout("column",null,null,"solid,round").add(e1=new edit("App title","280px",null,"none,single"),e3=new edit("Icon url","280px",null,"single,none"),new button("done",null,null,"silent").css("margin-left","auto")).css("padding","10px").on("click",function(){if(e1.text().length>3&&e3.text().length>3){so({title:e1.text(),body:"com."+e1.text(),src:e3.text(),page:[{title:"index",data:"var app = new setup({});\n\nfunction start(e){\nvar t = new text( \"jello world\" );\nbody.add( t );\n}"}]});history.back()}}),"center").open()}),c1=new text("Seems empty, create a new project.","100%",null,"center,small,hue").css({"display":"none",padding:"40px 0px"}))
+        setInterval(function(e){if(m.list().length>0)c1.css("display","none");else c1.css("display","block")},240)
+      }
+      
+      function so(i){
+        m.push(i);o.push(i);app.disk.all=app.json(o)
+      }
+      function dp(i){
+        m.pop(i);o.splice(i,1);app.disk.all=app.json(o)
+      }
+    </script>
+</html>

@@ -25,18 +25,13 @@ function global_object(opt={}){
     else
       for (let i = 0; i < args.length; i++) { if (typeof args[i] != "number") this.raw.removeChild(args[i].raw || args[i]);
         else this.raw.children[args[i]].remove() }; return this }
-  this.animate=function(a,b=350,c=function(){},d={}){
-   if("animate" in this.raw && "keys" in Object){
-     var precss={};var post=d;post.duration=b;post.fill="forwards";var ls=Object.keys(a);for(var i=0;i<ls.length;i++){precss[ls[i]]=this.css(ls[i])};console.log(JSON.stringify(precss))
-     this.raw.animate([precss,a], post);
-   }else{this.css(a);if(c)c()};return this}
-this.anmend=function(a,b){this.css(a);b()}
+  this.animate=function(a,b=350,c=function(){},d={}){if("animate" in this.raw && "keys" in Object){var precss={};var post=d;post.duration=b;post.fill="forwards";var ls=Object.keys(a);for(var i=0;i<ls.length;i++){precss[ls[i]]=this.css(ls[i])};this.raw.animate([precss,a], post);}else{this.css(a);if(c)c()};return this};this.anmend=function(a,b){this.css(a);b()}
 
   if(opt.css)this.css(opt.css);if(opt.attr)this.attr(opt.attr)
  return this
 }
 
-function tag(a,b,c){return new global_object({type:"tag",tag:a,css:{ "-webkit-text-size-adjust": "100%", "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)", "font-family": '"Poppins",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"', "font-size": "17px", "font-weight": '400', "color": "var(--text)", "display": "inline",width:b,height:c,color:"var(--text)"}})}
+function tag(a,b,c){return new global_object({type:"tag",tag:a,css:{ "-webkit-text-size-adjust": "100%", "-webkit-tap-highlight-color": "rgba(0, 0, 0, 0)", "font-family": '"Poppins",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"', "font-size": "17px", "font-weight": '400', "color": "var(--text)", "display": "inline",width:b,height:c}})}
 function ref(a){return new global_object({type:"ref",tag:a})}
 function bind(a){return new global_object({type:"bind",tag:a})}
 function tie(a){return new global_object({type:"tie",tag:a})}

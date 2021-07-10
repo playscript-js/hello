@@ -1,0 +1,1 @@
+function unilist(l,w="100%",h,opt){var obj=new list(new text("",null,null,opt).bind({text:"title"}),w,h);obj.push=obj.pushItem;obj.pop=obj.popItem;obj.select=obj.selectItem;obj.list=obj.listItem;obj.list(l||[]);return obj;}

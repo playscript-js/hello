@@ -1,5 +1,5 @@
 function edit(hint,w,h,opt="",ext){
-  var obj=new tag("edit",w||"50px",h).attr({contentEditable:true,hint:hint||"edit"}).css({padding:"8px 10px",fontSize:"17px",outline:0})
+  var obj=new tag("edit",w,h).attr({contentEditable:true,hint:hint||"edit"}).css({padding:"4px 5px",fontSize:"17px",outline:0,margin:"4px 5px",borderRadius:opt.includes("block")?"6px":"0px"}).css(opt.includes("block")?"border":!opt.includes("none")&&!opt.includes("slate")?"border-bottom":"void","1px solid var(--text)").on("focus",function(e){if(!opt.includes("slate"))obj.css(opt.includes("block")?"border":!opt.includes("none")?"border-bottom":"color",opt.includes("none")?"var(--hue)":"2px solid var(--hue)")}).on("blur",function(e){if(!opt.includes("slate"))obj.css(opt.includes("block")?"border":!opt.includes("none")?"border-bottom":"color",opt.includes("none")?"var(--text)":"2px solid var(--text)")})
   obj.hint=function(a){if(a)obj.attr("hint",a);else return obj.attr("hint");return obj}
   return obj
 }
